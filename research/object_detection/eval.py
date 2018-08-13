@@ -55,6 +55,9 @@ from object_detection.utils import config_util
 from object_detection.utils import dataset_util
 from object_detection.utils import label_map_util
 
+# According to https://github.com/tensorflow/models/issues/1854 
+# Sept 2017, this line will cause evaluation to happen on CPU. 
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
